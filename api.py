@@ -5,7 +5,7 @@ from RotationCipher import RotationEncrypt,RotationDecrypt
 import PolyAlphabeticCipher
 from PolyAlphabeticCipher import PolyAlphabeticEncrypt,PolyAlphabeticDecrypt
 import XORCipher
-from XORCipher import XOREncrypt,XORDecrypt
+from XORCipher import XOREncrypt
 
 sys.path.append("./lib")
 from flask import Flask,request,jsonify,Response,render_template
@@ -123,7 +123,7 @@ def xorData2():
     # get_json() gives the data in the dict format
     m = str(record['data'])
     k = str(record['key'])
-    record = XORDecrypt.decrypt(m, k)
+    record = XOREncrypt.decrypt(m, k)
     recordInDict = {
         "data":record,
         "key":k
