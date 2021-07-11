@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/elements.css">
+</head>
+
+<body>
+    <section id="container">
+        <div class="page">
+            <header tabindex="0">Encrypting And Decryption using REST API</header>
+            <div id="nav-container">
+              <div class="bg"></div>
+              <div class="button" tabindex="0">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </div>
+              <div id="nav-content" tabindex="0">
+                <ul>
+                    <div id="one">
+                        <li><a id="linkHome" href="#" onclick="showContent('homePage')">Home Page</a></li>
+                        <p></p>
+                        <li><a id="linkBasicRotate" href="#" onclick="showContent('basicRotate')">Basic Rotate</a></li>
+                        <p></p>
+                        <li><a id="polyFunc" href="#" onclick="showContent('polyShift')">Poly Alphabetic Rotate</a></li>
+                        <p></p>
+                        <li><a id="XOR" href="#" onclick="showContent('XORShift')">XOR Encrypt</a></li>
+                        <p></p>
+                        <p id="activeMenu"></p>
+                    </div>
+                </ul>
+              </div>
+            </div>
+          
+            <main>
+                              
+        <div id="two">
+            <div id="homePage">
+                <h2>Need to encrypt? Need to decrypt? Heh, you're in the right place<span>:Welcome</span></h2>
+      <p>Look through the menu bar to find your preferred method of encrypting. Have fun, don't do anything suspicious.....</p>
+            </div>
+            <div id="basicRotate">
+                <form id="basicRotateForm">
+                    <p> Information:<br>
+                        <br>
+                        The basic rotation encryption method is a simple method to<br>
+                        conceal data by shifting each alphanumeric character by a <br>
+                        specified numerical value between 0 and 26. For example, the world<br>
+                        'hello' shifted by '1' would become 'ifmmp'. This can be used to transfer<br>
+                        non essential data via a more secure method.
+                    </p>
+                    <label for="fname">Message:</label><br>
+                    <input type="text" id="bsrm" value=""><br>
+                    <label for="lname">Key:</label><br>
+                    <input type="number" id="bsrk" value=""><br><br>
+                    <button type="button" onclick="postBasicRotate()">Encrypt</button>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <div id="result1"></div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <form id="basicRotateForm2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" id="bsrmd" value=""><br>
+                        <label for="lname">Key:</label><br>
+                        <input type="number" id="bsrkd" value=""><br><br>
+                        <button type="button" onclick="postBasicRotate2()">Decrypt</button>
+                        <p></p>
+                        <div id="result2"></div>
+                    </form>
+            </div>
+            <div id="polyShift">
+                <form id="polyRotate">
+                    <p>Information: </p>
+                    <p>The Poly Alphabetic Encryption method is much more secure method<br>
+                        of transferring data. This encryption method utilies the vigenere square<br>
+                        as well as takes a string to Encrypt the data instead of a numerical key<br>
+                        and has multiple advantages. For one, information with the same letters will<br>
+                        not be the same when encrypted. For example, when 'hello world' is encryptyed <br>
+                        with the string 'qwerty', it becomes 'xapch uenpu'. Even though it has 2 'o',<br>
+                        they become 'h' and 'e' respectively.
+
+                    </p>
+                    <label for="fname">Message:</label><br>
+                    <input type="text" id="pm" value=""><br>
+                    <label for="lname">Key:</label><br>
+                    <input type="text" id="pe" value=""><br><br>
+                    <button type="button" onclick="postPoly1()">Encrypt</button>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <div id="result3"></div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <form id="polyRotate2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" id="pmd" value=""><br>
+                        <label for="lname">Key:</label><br>
+                        <input type="text" id="ped" value=""><br><br>
+                        <button type="button" onclick="postPoly2()">Decrypt</button>
+                        <p></p>
+                        <div id="result4"></div>
+                    </form>
+            </div>
+            <div id="XORShift">
+                <form id="XOR1">
+                    <p>Information: </p>
+                    <p>Using the XOR algorithm to encrypt data outputs messages that are much more garbled and<br>
+                        difficult to predict. It hides more information than a simple rotation cipher.<br>
+                        XOR also uses binary, but the algorithm does not add like in the rotation cipher. It compares each<br>
+                        corresponding bit, and outputs 0 if they are the same, 1 if they are different<br>
+                        The XOR cipher only takes 1 single key in order to encrypt. Although the single key<br>
+                        can make it suceptible to brute force attacks, it is still an extremely strong cipher<br>
+
+                    </p>
+                    <label for="fname">Message:</label><br>
+                    <input type="text" id="xm" value=""><br>
+                    <label for="lname">Key:</label><br>
+                    <input type="text" id="xk" value=""><br><br>
+                    <button type="button" onclick="postXor1()">Encrypt</button>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <div id="result5"></div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <form id="XOR2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" id="xmd" value=""><br>
+                        <label for="lname">Key:</label><br>
+                        <input type="text" id="xkd" value=""><br><br>
+                        <button type="button" onclick="postXor2()">Decrypt</button>
+                        <p></p>
+                        <div id="result6"></div>
+                    </form>
+            </div>
+
+        </div>
+
+
+    </section>
+        
+    <script src="/js/mainScript.js"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,3 @@
 @echo off
-cd "C:\This PC\Desktop\MajorWorks\api"
+cd "C:\This PC\Documents\GitHub\Major Works\Encrypt-Your-Data\api"
 Start api.py
-cd "C:\This PC\Desktop\MajorWorks\indexClick"
-Start indexClick.html
