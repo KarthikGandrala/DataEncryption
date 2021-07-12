@@ -45,6 +45,9 @@ body {
     #XORShift {
         display: none;
     }
+    #custom1 {
+      display: none;
+    }
 
     input {
         background-color: #60D700;

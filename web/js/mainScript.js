@@ -177,3 +177,4 @@ function postXor2() {
     // convert javascript object to string before sending it to the API
     request.send(JSON.stringify(data));
 }
+

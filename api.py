@@ -6,6 +6,8 @@ import PolyAlphabeticCipher
 from PolyAlphabeticCipher import PolyAlphabeticEncrypt,PolyAlphabeticDecrypt
 import XORCipher
 from XORCipher import XOREncrypt
+import CustomAlgorithm
+from CustomAlgorithm import CustomEncryptDecrypt
 
 sys.path.append("./lib")
 from flask import Flask,request,jsonify,Response,render_template
@@ -131,5 +133,7 @@ def xorData2():
     result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
     return result
 app.run()
+
+
 
 
