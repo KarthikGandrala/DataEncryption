@@ -59,12 +59,11 @@
                     <input type="text"   id="bsrm" value=""><br>
                     <label for="lname">Key:</label><br>
                     <input type="number"   id="bsrk" value=""><br><br>
-                    <button type="button" onclick="postBasicRotate()">Encrypt</button>
-                    <button type="reset">Clear Data</button>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                     <div id="result1"></div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <button type="button" onclick="postBasicRotate()">Encrypt</button>
                     <p></p>
                     <p></p>
                     <p></p>
@@ -73,10 +72,15 @@
                         <input type="text"   id="bsrmd" value=""><br>
                         <label for="lname">Key:</label><br>
                         <input type="number"   id="bsrkd" value=""><br><br>
-                        <button type="button" onclick="postBasicRotate2()">Decrypt</button>
-                        <button type="reset">Clear Data</button>
-                        <p></p>
                         <div id="result2"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <button type="button" onclick="postBasicRotate2()">Decrypt</button>
+                        <p></p>
+                        <button type="reset" onclick="clearBox('result1', 'result2')">Clear Data</button>
+                        <p></p>
+
                     </form>
             </div>
             <div id="polyShift">
@@ -95,12 +99,11 @@
                     <input type="text"   id="pm" value=""><br>
                     <label for="lname">Key:</label><br>
                     <input type="text"   id="pe" value=""><br><br>
-                    <button type="button" onclick="postPoly1()">Encrypt</button>
-                    <button type="reset">Clear Data</button>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                     <div id="result3"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    <button type="button" onclick="postPoly1()">Encrypt</button>
                     <p></p>
                     <p></p>
                     <p></p>
@@ -109,10 +112,15 @@
                         <input type="text"   id="pmd" value=""><br>
                         <label for="lname">Key:</label><br>
                         <input type="text"   id="ped" value=""><br><br>
+                        <div id="result4"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                         <button type="button" onclick="postPoly2()">Decrypt</button>
-                        <button type="reset">Clear Data</button>
+                        <p></p>
                         <p></p>
                         <div id="result4"></div>
+                        <button type="reset" onclick="clearBox('result3', 'result4')">Clear Data</button>
                     </form>
             </div>
             <div id="XORShift">
@@ -122,21 +130,18 @@
                         difficult to predict. It hides more information than a simple rotation cipher.<br>
                         XOR also uses binary, but the algorithm does not add like in the rotation cipher. It compares each<br>
                         corresponding bit, and outputs 0 if they are the same, 1 if they are different<br>
-                        The XOR cipher takes a key of any length for added security<br>
-                        The randomness of XOR and its ability to take any key makes it very strong and almost<br>
-                        impossible to break without the original key<br>
+                        The XOR cipher takes a key of any length for added security and is nearly impossible to break<br>
 
                     </p>
                     <label for="fname">Message:</label><br>
                     <input type="text"   id="xm" value=""><br>
                     <label for="lname">Key:</label><br>
                     <input type="text"   id="xk" value=""><br><br>
-                    <button type="button" onclick="postXor1()">Encrypt</button>
-                    <button type="reset">Clear Data</button>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                     <div id="result5"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    <button type="button" onclick="postXor1()">Encrypt</button>
                     <p></p>
                     <p></p>
                     <p></p>
@@ -145,10 +150,11 @@
                         <input type="text"   id="xmd" value=""><br>
                         <label for="lname">Key:</label><br>
                         <input type="text" i  id="xkd" value=""><br><br>
-                        <button type="button" onclick="postXor2()">Decrypt</button>
-                        <button type="reset">Clear Data</button>
-                        <p></p>
                         <div id="result6"></div>
+                        <p></p>
+                        <button type="button" onclick="postXor2()">Decrypt</button>
+                        <p></p>
+                        <button type="reset" onclick="clearBox('result5', 'result6')">Clear Data</button>
                     </form>
             </div>
 

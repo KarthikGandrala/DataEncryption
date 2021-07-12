@@ -9,6 +9,12 @@ function showContent(clickLinkId) {
     document.getElementById("activeMenu").value = clickLinkId;
 }
 
+function clearBox(e1, e2)
+{
+    document.getElementById(e1).innerHTML = "";
+    document.getElementById(e2).innerHTML = "";
+}
+
 function postBasicRotate() {
     // creating the XMLHttpRequest object
     var request = new XMLHttpRequest();
