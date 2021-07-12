@@ -33,7 +33,7 @@ def encryptData():
         "data":record,
         "key":k
     }
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"])) + " and the key is " + str(json.dumps(recordInDict["key"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/basicDecrypt', methods=['POST'])

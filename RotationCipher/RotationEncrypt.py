@@ -18,9 +18,14 @@ def BasicRotate(letter, key):
 
 def encryptBasicRotate(message, key):
     encrypted = ''
-    for character in message:
-        encrypted = encrypted + BasicRotate(character, key)
+    if key < 0 or key > 26:
+        error = "ERROR. Out of range. Key Must be between 0 and 26"
+        return error
+    else:
+        for character in message:
+            encrypted = encrypted + BasicRotate(character, key)
     return encrypted
+    
 
 # def runEncryptRotate(message, key):
 #     print('Encrypted Value is: ' + encryptBasicRotate(message, key))
