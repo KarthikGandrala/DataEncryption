@@ -24,7 +24,8 @@ def encryptBasicRotate(message, key):
     else:
         for character in message:
             encrypted = encrypted + BasicRotate(character, key)
-    return encrypted
+            
+    return encrypted, key
     
 
 # def runEncryptRotate(message, key):

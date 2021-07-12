@@ -35,7 +35,7 @@ def encryptData():
         "data":record,
         "key":k
     }
-    result = str(json.dumps(recordInDict["data"]))
+    result = "Encrypted message with key is " + str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/basicDecrypt', methods=['POST'])
@@ -54,7 +54,7 @@ def decryptData():
         "data":record,
         "key":k
     }
-    result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = "The Decrypted message with key is " + str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/polyEncrypt', methods=['POST'])

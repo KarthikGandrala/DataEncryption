@@ -28,7 +28,7 @@ def encrypt(message, key):
     return encrypted
 
 def decrypt(message, key):
-    return encrypt(message, -key)
+    return encrypt(message, -key), key
 
 # def runDecryptRotate(message, key):
 #     print('Encrypted Value is: ' + decrypt(message, key))
