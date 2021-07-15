@@ -1,3 +1,4 @@
+import re
 import sys
 import json
 import RotationCipher
@@ -8,6 +9,7 @@ import XORCipher
 from XORCipher import XOREncrypt
 import CustomAlgorithm
 from CustomAlgorithm import CustomEncryptDecrypt
+import re
 
 sys.path.append("./lib")
 from flask import Flask,request,jsonify,Response,render_template
@@ -54,7 +56,7 @@ def decryptData():
         "data":record,
         "key":k
     }
-    result = "The Decrypted message with key is " + str(json.dumps(recordInDict["data"]))
+    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/polyEncrypt', methods=['POST'])
@@ -131,6 +133,40 @@ def xorData2():
         "key":k
     }
     result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
+    return result
+
+@app.route('/cE', methods=['POST'])
+def cus1():
+    print('received Post')
+    # Get JSON data
+    record = request.get_json()
+    print(record)
+    # get_json() gives the data in the dict format
+    m = str(record['data'])
+    k = len(str(record['data']))
+    record = CustomEncryptDecrypt.cipher_encryption(m, k)
+    recordInDict = {
+        "data":record,
+        "key": k
+    }
+    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    return result
+
+@app.route('/cD', methods=['POST'])
+def cus2():
+    print('received Post')
+    # Get JSON data
+    record = request.get_json()
+    print(record)
+    # get_json() gives the data in the dict format
+    m = str(record['data'])
+    k = len(str(record['data']))
+    record = CustomEncryptDecrypt.cipher_decryption(m, k)
+    recordInDict = {
+        "data":record,
+        "key": k
+    }
+    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
     return result
 app.run()
 

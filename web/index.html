@@ -56,9 +56,10 @@
                                 <br>
                                 The basic rotation encryption method is a simple method to<br>
                                 conceal data by shifting each alphanumeric character by a <br>
-                                specified numerical value between 0 and 26. For example, the world<br>
-                                'hello' shifted by '1' would become 'ifmmp'. This can be used to transfer<br>
-                                non essential data via a more secure method.
+                                specified numerical value. For example, the world<br>
+                                'hello' shifted by '1' would become 'ifmmp'.<br>
+                                non essential data via a more secure method. To get started<br>
+                                Please input data and a key between 0 and 26
                             </p>
                             <label for="fname">Message:</label><br>
                             <input type="text" id="bsrm" value=""><br>
@@ -166,7 +167,39 @@
                             </form>
                     </div>
                     <div id="custom1">
-                        
+                        <form id="c1">
+                                <p>Information: </p>
+                                <p>Using the XOR algorithm to encrypt data outputs messages that are much more garbled
+                                    and<br>
+                                    difficult to predict. It hides more information than a simple rotation cipher.<br>
+                                    XOR also uses binary, but the algorithm does not add like in the rotation cipher. It
+                                    compares each<br>
+                                    corresponding bit, and outputs 0 if they are the same, 1 if they are different<br>
+                                    The XOR cipher takes a key of any length for added security and is nearly impossible to
+                                    break<br>
+
+                                </p>
+                                <label for="fname">Message:</label><br>
+                                <input type="text" oninput="this.value = this.value.toUpperCase()" id="CE" value=""><br>
+                                <br>
+                                <div id="result7"></div>
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                <button type="button" onclick="custom1()">Encrypt</button>
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                <form id="c2">
+                                    <label for="fname">Message:</label><br>
+                                    <input type="text" oninput="this.value = this.value.toUpperCase()" id="CD" value=""><br>
+                                    <br>
+                                    <div id="result8"></div>
+                                    <p></p>
+                                    <button type="button" onclick="custom2()">Decrypt</button>
+                                    <p></p>
+                                    <button type="reset" onclick="clearBox('result7', 'result8')">Clear Data</button>
+                                </form>
                     </div>
 
                 </div>

@@ -178,3 +178,54 @@ function postXor2() {
     request.send(JSON.stringify(data));
 }
 
+function custom1() {
+    // creating the XMLHttpRequest object
+    var request = new XMLHttpRequest();
+  
+    // Instantiating the request object
+    request.open("POST", "/cE");
+    request.setRequestHeader("Content-Type", "application/json");
+    // This line is to define the event listener for readystatexchange event
+    request.onreadystatechange = function () {
+        // checks is request is sucess
+        if (this.readyState === 4 && this.status === 200) {
+
+            // Inserting response from server
+            
+            document.getElementById("result7").innerHTML = this.responseText;
+        }
+    };
+    // buid javascript object
+     var data = {
+                    data: document.getElementById("CE").value,
+                }
+    // Request is sent to the server
+    // convert javascript object to string before sending it to the API
+    request.send(JSON.stringify(data));
+}
+
+function custom2() {
+    // creating the XMLHttpRequest object
+    var request = new XMLHttpRequest();
+  
+    // Instantiating the request object
+    request.open("POST", "/cD");
+    request.setRequestHeader("Content-Type", "application/json");
+    // This line is to define the event listener for readystatexchange event
+    request.onreadystatechange = function () {
+        // checks is request is sucess
+        if (this.readyState === 4 && this.status === 200) {
+
+            // Inserting response from server
+            
+            document.getElementById("result8").innerHTML = this.responseText;
+        }
+    };
+    // buid javascript object
+     var data = {
+                    data: document.getElementById("CD").value,
+                }
+    // Request is sent to the server
+    // convert javascript object to string before sending it to the API
+    request.send(JSON.stringify(data));
+}

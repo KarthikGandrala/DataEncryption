@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
 def reverseBasicRotate(letter, key):
     if letter.islower():
         new = ord(letter) + key
@@ -8,7 +12,7 @@ def reverseBasicRotate(letter, key):
         new = chr(new)
     else:
         new = letter
-        
+
         if letter.isupper():
             new = ord(letter) + key
             if new > ord('Z'):
@@ -18,17 +22,20 @@ def reverseBasicRotate(letter, key):
             new = chr(new)
         else:
             new = letter
-    
+
     return new
-        
+
+
 def encrypt(message, key):
     encrypted = ''
     for character in message:
         encrypted += reverseBasicRotate(character, key)
     return encrypted
 
+
 def decrypt(message, key):
-    return encrypt(message, -key), key
+    return (encrypt(message, -key), key)
+
 
 # def runDecryptRotate(message, key):
 #     print('Encrypted Value is: ' + decrypt(message, key))
