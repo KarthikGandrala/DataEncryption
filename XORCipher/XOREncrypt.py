@@ -3,7 +3,6 @@
 
 
 def encrypt(msg, key):
-
     encrypt_hex = ''
     key_itr = 0
     for i in range(len(msg)):
