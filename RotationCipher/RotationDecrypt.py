@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+import pydoc
 
 def reverseBasicRotate(letter, key):
     if letter.islower():
@@ -37,7 +37,3 @@ def decrypt(message, key):
     return encrypt(message, -key)
 
 
-# def runDecryptRotate(message, key):
-#     print('Encrypted Value is: ' + decrypt(message, key))
-
-# runDecryptRotate()
