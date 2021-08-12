@@ -52,14 +52,16 @@
                     </div>
                     <div id="basicRotate">
                         <form id="basicRotateForm">
-                            <p> Information:<br>
-                                <br>
+                            <p style="font-size: 20px" > <strong>Basic Rotate Function</strong><br>
+                            <p> 
+                                To encrypt, input alphanumeric data and key within 0 and 26<br>
+                                To decrupt, input data and key into the decrypt section<br>
+                                This function won't work on special charcters and integers<br>
                                 The basic rotation encryption method is a simple method to<br>
                                 conceal data by shifting each alphanumeric character by a <br>
                                 specified numerical value. For example, the world<br>
                                 'hello' shifted by '1' would become 'ifmmp'.<br>
-                                non essential data via a more secure method. To get started<br>
-                                Please input data and a key between 0 and 26
+                                non essential data via a more secure method. 
                             </p>
                             <label for="fname">Message:</label><br>
                             <input type="text" id="bsrm" value=""><br>
@@ -85,21 +87,21 @@
                                 <button type="button" onclick="postBasicRotate2()">Decrypt</button>
                                 <p></p>
                                 <button type="reset" onclick="clearBox('result1', 'result2')">Clear Data</button>
+                                <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
                                 <p></p>
 
                             </form>
                     </div>
                     <div id="polyShift">
                         <form id="polyRotate">
-                            <p>Information: </p>
-                            <p>The Poly Alphabetic Encryption method is much more secure method<br>
-                                of transferring data. This encryption method utilies the vigenere square<br>
-                                as well as takes a string to Encrypt the data instead of a numerical key<br>
-                                and has multiple advantages. For one, information with the same letters will<br>
-                                not be the same when encrypted. For example, when 'hello world' is encryptyed <br>
-                                with the string 'qwerty', it becomes 'xapch uenpu'. Even though it has 2 'o',<br>
-                                they become 'h' and 'e' respectively.
-
+                            <p style="font-size: 20px" > <strong>Poly Alphabetic Encryption</strong><br>
+                            <p> To encrypt, pass data and string as key. Integers will<br>
+                                not be encrypted and integers within key cause errors<br>
+                                The Poly Alphabetic method is much more secure method<br>
+                                of transferring data. This method uses vigenere squares<br>
+                                For one, information with same letters won't be the<br> 
+                                same if encrypted. For example, if 'hello world' is passed<br>
+                                with encryption string 'qwerty', it creates 'xapch uenpu'.
                             </p>
                             <label for="fname">Message:</label><br>
                             <input type="text" id="pm" value=""><br>
@@ -117,7 +119,7 @@
                                 <label for="fname">Message:</label><br>
                                 <input type="text" id="pmd" value=""><br>
                                 <label for="lname">Key:</label><br>
-                                <input type="text" id="ped" value=""><br><br>
+                                <input type="text" id="ped" value="" pattern="^[a-zA-Z]+$"><br><br>
                                 <div id="result4"></div>
                                 <p></p>
                                 <p></p>
@@ -127,20 +129,19 @@
                                 <p></p>
                                 <div id="result4"></div>
                                 <button type="reset" onclick="clearBox('result3', 'result4')">Clear Data</button>
+                                <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+
                             </form>
                     </div>
                     <div id="XORShift">
                         <form id="XOR1">
-                            <p>Information: </p>
-                            <p>Using the XOR algorithm to encrypt data outputs messages that are much more garbled
-                                and<br>
-                                difficult to predict. It hides more information than a simple rotation cipher.<br>
-                                XOR also uses binary, but the algorithm does not add like in the rotation cipher. It
-                                compares each<br>
-                                corresponding bit, and outputs 0 if they are the same, 1 if they are different<br>
-                                The XOR cipher takes a key of any length for added security and is nearly impossible to
-                                break<br>
-
+                            <p style="font-size: 20px" > <strong>XOR Encryption</strong><br>
+                            <p> To start, pass any message and any key for encryption<br>
+                                Using the XOR algorithm to encrypt data outputs messages<br> 
+                                that are much more garbled and difficult to predict.<br> 
+                                XOR also uses binary, but the algorithm does not add like<br> 
+                                in the rotation cipher. It compares each corresponding bit,<br> 
+                                and outputs 0 if they are the same, 1 if they are different.<br>
                             </p>
                             <label for="fname">Message:</label><br>
                             <input type="text" id="xm" value=""><br>
@@ -164,6 +165,8 @@
                                 <button type="button" onclick="postXor2()">Decrypt</button>
                                 <p></p>
                                 <button type="reset" onclick="clearBox('result5', 'result6')">Clear Data</button>
+                                <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+
                             </form>
                     </div>
                     <div id="custom1">
@@ -199,6 +202,8 @@
                                     <button type="button" onclick="custom2()">Decrypt</button>
                                     <p></p>
                                     <button type="reset" onclick="clearBox('result7', 'result8')">Clear Data</button>
+                                    <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+
                                 </form>
                     </div>
 
