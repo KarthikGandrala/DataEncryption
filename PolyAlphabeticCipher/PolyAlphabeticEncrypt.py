@@ -20,7 +20,8 @@ def rotate(letter, key):
         if new > ord('z'):
             new = new - 26
             
-            
+    # Checks if letter has not gone past a 
+    
         elif new < ord('a'):
 
             new = new + 26
@@ -31,11 +32,19 @@ def rotate(letter, key):
 
         new = letter
 
+    # This algorithm executes if letter in uppercase
+    
         if letter.isupper():
             new = ord(letter) + key
+            
+            # Checks if new has gone past capital Z
+            
             if new > ord('Z'):
                 new = new - 26
             new = chr(new)
+            
+        # Condition executes if none of these have been met
+        
         else:
             new = letter
     return new
@@ -50,17 +59,29 @@ counter = 0
 def polyPrint(message, key):
     encrypted = ''
     counter = 0
+    
+    # For loop written to split the message
+    
     for i in range(len(message)):
         letter = message[i]
+
+        # Checks if letter is lowercase
+        
         if letter.islower():
+            
+            # Modulus operator used to check if remainder is there
+            
             subkey = key[counter % len(key)]
+            
+            # Encrypted is assigned the rotated letter
+            
             encrypted = encrypted + rotate(letter, subkey)
             counter += 1
         else:
             encrypted = encrypted + letter
+            
+    # In this end, encrypted is returned with all the encrypted letters
+    
     return encrypted
 
 
-  # Final value is returned
-  # print("Encrypted with '" + key + "':")
-  # print(encrypted)
