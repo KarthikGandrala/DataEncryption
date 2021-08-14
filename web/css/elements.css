@@ -54,7 +54,24 @@ body {
       display: none;
     }
 
+    #country {
+      background-color: #60D700;
+      color: #151515;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    #subject {
+      background-color: #60D700;
+      width: 150%;
+      color: #151515;
+    }
+
+    #support {
+      display: none;
+    }
+
     input {
+      color: #151515;
         background-color: #60D700;
         font-family: 'Courier New', Courier, monospace;
         font-size: 18px;

@@ -36,6 +36,8 @@
                             <p></p>
                             <li><a id="Custom" href="#" onclick="showContent('custom1')">Custom Encrypt</a></li>
                             <p></p>
+                            <li><a id="Support" href="#" onclick="showContent('support')">Contact Support</a></li>
+                            <p></p>
                             <p id="activeMenu"></p>
                         </div>
                     </ul>
@@ -55,7 +57,7 @@
                             <p style="font-size: 20px" > <strong>Basic Rotate Function</strong><br>
                             <p> 
                                 To encrypt, input alphanumeric data and key within 0 and 26<br>
-                                To decrupt, input data and key into the decrypt section<br>
+                                To decrypt, input data and key into the decrypt section<br>
                                 This function won't work on special charcters and integers<br>
                                 The basic rotation encryption method is a simple method to<br>
                                 conceal data by shifting each alphanumeric character by a <br>
@@ -95,8 +97,8 @@
                     <div id="polyShift">
                         <form id="polyRotate">
                             <p style="font-size: 20px" > <strong>Poly Alphabetic Encryption</strong><br>
-                            <p> To encrypt, pass data and string as key. Integers will<br>
-                                not be encrypted and integers within key cause errors<br>
+                            <p> Pass data and a string key. Integers in data won't<br>
+                                be encrypted and integers in the key cause errors<br>
                                 The Poly Alphabetic method is much more secure method<br>
                                 of transferring data. This method uses vigenere squares<br>
                                 For one, information with same letters won't be the<br> 
@@ -204,6 +206,44 @@
                                     <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
 
                                 </form>
+                    </div>
+                    <div id="support">
+                        <form>
+                            <br>
+                            <br>
+                            <label for="fname">First Name</label>
+                            <br>
+                            <br>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            <br>
+                            <br>
+                            <label for="lname">Last Name</label>
+                            <br>
+                            <br>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            <br>
+                            <br>
+                            <label for="country">Country</label>
+                            <br>
+                            <br>
+                            <select id="country" name="country" >
+                                <br>
+                                <br>
+                              <option value="australia">Australia</option>
+                              <option value="canada">Canada</option>
+                              <option value="usa">USA</option>
+                            </select>
+                            <br>
+                            <br>
+                            <label for="subject">Subject</label>
+                            <br>
+                            <br>
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                            <br>
+                            <br>
+                            <input type="submit" value="Submit" onclick="alert('Message has been sent to our support unit! We will be in touch shortly.')">
+                        
+                          </form>
                     </div>
 
                 </div>
