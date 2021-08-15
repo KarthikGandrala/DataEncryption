@@ -59,7 +59,11 @@ counter = 0
 def polyPrint(message, key):
     encrypted = ''
     counter = 0
-    
+    for char in key:
+        print(char)
+        if str(char).isdigit() == True:
+            encrypted = "ERROR. Please input key with no integers or special characters"
+            return encrypted
     # For loop written to split the message
     
     for i in range(len(message)):

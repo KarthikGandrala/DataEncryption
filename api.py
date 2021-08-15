@@ -75,7 +75,7 @@ def polyData():
         "data":record,
         "key":k
     }
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/polyDecrypt', methods=['POST'])
