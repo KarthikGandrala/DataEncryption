@@ -208,7 +208,7 @@ function custom2() {
     // creating the XMLHttpRequest object
     var request = new XMLHttpRequest();
   
-    // Instantiating the request object
+    // Instantiating the request object`
     request.open("POST", "/cD");
     request.setRequestHeader("Content-Type", "application/json");
     // This line is to define the event listener for readystatexchange event
