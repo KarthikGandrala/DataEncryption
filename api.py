@@ -94,7 +94,7 @@ def polyData2():
         "data":record,
         "key":k
     }
-    result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/xorEncrypt', methods=['POST'])
