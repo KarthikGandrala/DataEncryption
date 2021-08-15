@@ -30,11 +30,22 @@ def rotate(letter, key):
 
         new = letter
 
+        # Checks if letter is uppercase
+        
         if letter.isupper():
             new = ord(letter) + key
+            
+            # Checks if letter has gone past capital Z
+            
             if new > ord('Z'):
+                
+            # If new has gone past Z, 26 is then subtracted to balance it out
+            
                 new = new - 26
             new = chr(new)
+
+        
+        # If none of these situation are satisfied, new is appended
         else:
             new = letter
     return new
@@ -43,20 +54,38 @@ def rotate(letter, key):
 # This series of statements decrypts the message
 
 def decrypt(message, key):
+    
+    # Empty string for appending and counter is defined
+    
     decrypted = ''
     counter = 0
+    spec = "~!@#$%^&*()_+}}][|::;><?/"
+    for char in key:
+        print(char)
+        if str(char).isdigit() == True or spec.count(char) > 0:
+            encrypted = "ERROR. Please input key with no integers or special characters"
+            return encrypted
 
     # Loop runs for the length of the users input message
 
     for i in range(len(message)):
         letter = message[i]
 
-        # Encrypted Characters are concatenated
+        # If loop runs as long as letter is in lowercase
 
         if letter.islower():
+            
+            # Modulus operator is utilised to check if any remainder is present
+            
             subkey = key[counter % len(key)]
+            
+            # result is appended to the decrypted string which stores the data
+            
             decrypted = decrypted + rotate(letter, subkey)
             counter += 1
         else:
             decrypted = decrypted + letter
+            
+    # After the whole process has been completed for the length of string, decrypted is returned
+    
     return decrypted

@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Function to encrypt message using key is defined
 
 def encrypt(msg, key):
     encrypt_hex = ''

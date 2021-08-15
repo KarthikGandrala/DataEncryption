@@ -1,4 +1,0 @@
-#!/bin/bash
-% cd Documents
-% chmod 755 api.sh
-openme://http://localhost:5000/index.html

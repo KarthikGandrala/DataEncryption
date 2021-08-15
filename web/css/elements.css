@@ -2,6 +2,11 @@ body {
     background-color: #151515;
 }
 
+#info {
+  border-radius: 50%;
+  padding: 0px;
+}
+
 #banner{
     height: 100px;
     border: 1px solid #151515;
@@ -48,8 +53,29 @@ body {
     #custom1 {
       display: none;
     }
+    #tc {
+      display: none;
+    }
+
+    #country {
+      background-color: #60D700;
+      color: #151515;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+
+    #subject {
+      background-color: #60D700;
+      width: 150%;
+      color: #151515;
+    }
+
+    #support {
+      display: none;
+    }
 
     input {
+      color: #151515;
         background-color: #60D700;
         font-family: 'Courier New', Courier, monospace;
         font-size: 18px;
