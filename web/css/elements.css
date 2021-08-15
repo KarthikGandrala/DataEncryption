@@ -53,12 +53,16 @@ body {
     #custom1 {
       display: none;
     }
+    #tc {
+      display: none;
+    }
 
     #country {
       background-color: #60D700;
       color: #151515;
       font-family: 'Courier New', Courier, monospace;
     }
+
 
     #subject {
       background-color: #60D700;
