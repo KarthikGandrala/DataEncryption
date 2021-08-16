@@ -1,6 +1,5 @@
 # Importing all required standard modules and functions from custom modules
 
-import re
 import sys
 import json
 import RotationCipher

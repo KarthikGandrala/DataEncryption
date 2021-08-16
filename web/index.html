@@ -95,7 +95,8 @@
             <div id="polyShift">
                <form id="polyRotate">
                   <p style="font-size: 20px" > <strong>Poly Alphabetic Encryption</strong><br>
-                  <p> Pass data and a string key. Integers in data won't<br>
+                  <p> Pass data and a single string of any length as a key.<br> 
+                     Integers in data will not be detected or <br>
                      be encrypted and integers in the key cause errors<br>
                      The Poly Alphabetic method is much more secure method<br>
                      of transferring data. This method uses vigenere squares<br>
@@ -106,7 +107,7 @@
                   <label for="fname">Message:</label><br>
                   <input type="text" id="pm" value=""><br>
                   <label for="lname">Key:</label><br>
-                  <input type="text" id="pe" value=""><br><br>
+                  <input type="text" id="pe" value="" onkeypress="limitSpace(event)"><br><br>
                   <div id="result3"></div>
                   <p></p>
                   <p></p>

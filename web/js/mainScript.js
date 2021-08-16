@@ -43,6 +43,15 @@ function postBasicRotate() {
     request.send(JSON.stringify(data));
 }
 
+function limitSpace(event)
+{
+   if(event.which ==32)
+   {
+      event.preventDefault();
+      return false;
+   }
+}
+
 function postBasicRotate2() {
     // creating the XMLHttpRequest object
     var request = new XMLHttpRequest();
