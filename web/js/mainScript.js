@@ -1,11 +1,16 @@
 showContent("homePage");
+
 function showContent(clickLinkId) {
+
     if (document.getElementById("activeMenu").value != undefined) {
+
         currentMenu = document.getElementById("activeMenu").value;
+
         document.getElementById(currentMenu).style.display = "none";
     }
 
     document.getElementById(clickLinkId).style.display = "block";
+    
     document.getElementById("activeMenu").value = clickLinkId;
 }
 
