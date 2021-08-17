@@ -99,7 +99,7 @@ def decryptData():
     
     # Data is appended to result and is finally returned
 
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
     return result
 
 # Function defined to gather input and apply algorithms
@@ -294,7 +294,7 @@ def cus2():
     
     # Final result is appended to result and returned to user
     
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = "The decrypted message is " + str(json.dumps(recordInDict["data"]))
     return result
 app.run()
 
