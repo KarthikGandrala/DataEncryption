@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title></title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="/css/elements.css">
-   </head>
-   <body>
-      <section id="container">
-         <div class="page">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title></title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/css/elements.css">
+</head>
+
+<body>
+   <section id="container">
+      <div class="page">
          <header tabindex="0">Encrypting And Decrypting using REST API</header>
          <div id="nav-container">
             <div class="bg"></div>
@@ -44,242 +46,278 @@
             </div>
          </div>
          <main>
-         <div id="two">
-            <div id="homePage">
-               <h2>Need to encrypt? Need to decrypt? Heh, you're in the right place<span>:Welcome</span></h2>
-               <p>Look through the menu bar to find your preferred method of encrypting. Have fun, don't do
-                  anything suspicious.....
-               </p>
-            </div>
-            <div id="basicRotate">
-               <form id="basicRotateForm">
-                  <p style="font-size: 20px" > <strong>Basic Rotate Function</strong><br>
-                  <p> 
-                     To encrypt, input alphanumeric data and key within 0 and 26<br>
-                     To decrypt, input data and key into the decrypt section<br>
-                     This function won't work on special charcters and integers<br>
-                     The basic rotation encryption method is a simple method to<br>
-                     conceal data by shifting each alphanumeric character by a <br>
-                     specified numerical value. For example, the world<br>
-                     'hello' shifted by '1' would become 'ifmmp'.<br>
-                     non essential data via a more secure method. 
+            <div id="two">
+               <div id="homePage">
+                  <h2>Need to encrypt? Need to decrypt? Heh, you're in the right place<span>:Welcome</span></h2>
+                  <p>Look through the menu bar to find your preferred method of encrypting. Have fun, don't do
+                     anything suspicious.....
                   </p>
-                  <label for="fname">Message:</label><br>
-                  <input type="text" id="bsrm" value=""><br>
-                  <label for="lname">Key:</label><br>
-                  <input type="number" id="bsrk" value=""><br><br>
-                  <div id="result1"></div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <button type="button" onclick="postBasicRotate()">Encrypt</button>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-               <form id="basicRotateForm2">
-                  <label for="fname">Message:</label><br>
-                  <input type="text" id="bsrmd" value=""><br>
-                  <label for="lname">Key:</label><br>
-                  <input type="number" id="bsrkd" value=""><br><br>
-                  <div id="result2"></div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <button type="button" onclick="postBasicRotate2()">Decrypt</button>
-                  <p></p>
-                  <button type="reset" onclick="clearBox('result1', 'result2')">Clear Data</button>
-                  <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
-                  <p></p>
-               </form>
-            </div>
-            <div id="polyShift">
-               <form id="polyRotate">
-                  <p style="font-size: 20px" > <strong>Poly Alphabetic Encryption</strong><br>
-                  <p> Pass data and a single string of any length as a key.<br> 
-                     Integers in data will not be detected or <br>
-                     be encrypted and integers in the key cause errors<br>
-                     The Poly Alphabetic method is much more secure method<br>
-                     of transferring data. This method uses vigenere squares<br>
-                     For one, information with same letters won't be the<br> 
-                     same if encrypted. For example, if 'hello world' is passed<br>
-                     with encryption string 'qwerty', it creates 'xapch uenpu'.
-                  </p>
-                  <label for="fname">Message:</label><br>
-                  <input type="text" id="pm" value=""><br>
-                  <label for="lname">Key:</label><br>
-                  <input type="text" id="pe" value="" onkeypress="limitSpace(event)"><br><br>
-                  <div id="result3"></div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <button type="button" onclick="postPoly1()">Encrypt</button>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-               <form id="polyRotate2">
-                  <label for="fname">Message:</label><br>
-                  <input type="text" id="pmd" value=""><br>
-                  <label for="lname">Key:</label><br>
-                  <input type="text" id="ped" value="" pattern="^[a-zA-Z]+$"><br><br>
-                  <div id="result4"></div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <button type="button" onclick="postPoly2()">Decrypt</button>
-                  <p></p>
-                  <p></p>
-                  <div id="result4"></div>
-                  <button type="reset" onclick="clearBox('result3', 'result4')">Clear Data</button>
-                  <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
-               </form>
-            </div>
-            <div id="XORShift">
-               <form id="XOR1">
-                  <p style="font-size: 20px" > <strong>XOR Encryption</strong><br>
-                  <p> To start, pass any message and any key for encryption<br>
-                     Using the XOR algorithm to encrypt data outputs messages<br> 
-                     that are much more garbled and difficult to predict.<br> 
-                     XOR also uses binary, but the algorithm does not add like<br> 
-                     in the rotation cipher. It compares each corresponding bit,<br> 
-                     and outputs 0 if they are the same, 1 if they are different.<br>
-                  </p>
-                  <label for="fname">Message:</label><br>
-                  <input type="text" id="xm" value=""><br>
-                  <label for="lname">Key:</label><br>
-                  <input type="text" id="xk" value=""><br><br>
-                  <div id="result5"></div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <button type="button" onclick="postXor1()">Encrypt</button>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-               <form id="XOR2">
-                  <label for="fname">Message:</label><br>
-                  <input type="text" id="xmd" value=""><br>
-                  <label for="lname">Key:</label><br>
-                  <input type="text" i id="xkd" value=""><br><br>
-                  <div id="result6"></div>
-                  <p></p>
-                  <button type="button" onclick="postXor2()">Decrypt</button>
-                  <p></p>
-                  <button type="reset" onclick="clearBox('result5', 'result6')">Clear Data</button>
-                  <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
-               </form>
-            </div>
-            <div id="custom1">
-               <form id="c1">
-                  <p style="font-size: 20px" > <strong>Custom Encryption</strong><br>
-                  <p> To start, pass alphanumeric or integer key for encryption<br>
-                     The algorithm autmatically converts input to uppercase<br>
-                     The key is already preloaded and the user doesn't need<br>
-                     a unique key. This algorithm will not encrypt special<br>
-                     characters and they will ignored by the algorithm<br>
-                     This is a simple algorithm that the user can use if<br>
-                     they do not want to create their own key or let an<br>
-                     individual see what they want to encrypt.<br>
-                  </p>
-                  <label for="fname">Message:</label><br>
-                  <input type="text" oninput="this.value = this.value.toUpperCase()" id="CE" value=""><br>
-                  <br>
-                  <div id="result7"></div>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <button type="button" onclick="custom1()">Encrypt</button>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-               <form id="c2">
-                  <label for="fname">Message:</label><br>
-                  <input type="text" oninput="this.value = this.value.toUpperCase()" id="CD" value=""><br>
-                  <br>
-                  <div id="result8"></div>
-                  <p></p>
-                  <button type="button" onclick="custom2()">Decrypt</button>
-                  <p></p>
-                  <button type="reset" onclick="clearBox('result7', 'result8')">Clear Data</button>
-                  <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
-               </form>
-            </div>
-            <div id="support">
-               <form>
-                  <br>
-                  <br>
-                  <label for="fname">First Name</label>
-                  <br>
-                  <br>
-                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                  <br>
-                  <br>
-                  <label for="lname">Last Name</label>
-                  <br>
-                  <br>
-                  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                  <br>
-                  <br>
-                  <label for="country">Country</label>
-                  <br>
-                  <br>
-                  <select id="country" name="country" >
+               </div>
+               <div id="basicRotate">
+                  <form id="basicRotateForm">
+                     <p style="font-size: 20px"> <strong>Basic Rotate Function</strong><br>
+                     <p>
+                        To encrypt, input alphanumeric data and key within 0 and 26<br>
+                        To decrypt, input data and key into the decrypt section<br>
+                        This function won't work on special charcters and integers<br>
+                        The basic rotation encryption method is a simple method to<br>
+                        conceal data by shifting each alphanumeric character by a <br>
+                        specified numerical value. For example, the world<br>
+                        'hello' shifted by '1' would become 'ifmmp'.<br>
+                        non essential data via a more secure method.
+                     </p>
+                     <label for="fname">Message:</label><br>
+                     <input type="text" id="bsrm" value=""><br>
+                     <label for="lname">Key:</label><br>
+                     <input type="number" id="bsrk" value=""><br><br>
+                     <div id="result1"></div>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <button type="button" onclick="postBasicRotate()">Encrypt</button>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <form id="basicRotateForm2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" id="bsrmd" value=""><br>
+                        <label for="lname">Key:</label><br>
+                        <input type="number" id="bsrkd" value=""><br><br>
+                        <div id="result2"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <button type="button" onclick="postBasicRotate2()">Decrypt</button>
+                        <p></p>
+                        <button type="reset" onclick="clearBox('result1', 'result2')">Clear Data</button>
+                        <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+                        <p></p>
+                     </form>
+               </div>
+               <div id="polyShift">
+                  <form id="polyRotate">
+                     <p style="font-size: 20px"> <strong>Poly Alphabetic Encryption</strong><br>
+                     <p> Pass data and a single string of any length as a key.<br>
+                        Integers in data will not be detected or <br>
+                        be encrypted and integers in the key cause errors<br>
+                        The Poly Alphabetic method is much more secure method<br>
+                        of transferring data. This method uses vigenere squares<br>
+                        For one, information with same letters won't be the<br>
+                        same if encrypted. For example, if 'hello world' is passed<br>
+                        with encryption string 'qwerty', it creates 'xapch uenpu'.
+                     </p>
+                     <label for="fname">Message:</label><br>
+                     <input type="text" id="pm" value=""><br>
+                     <label for="lname">Key:</label><br>
+                     <input type="text" id="pe" value="" onkeypress="limitSpace(event)"><br><br>
+                     <div id="result3"></div>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <button type="button" onclick="postPoly1()">Encrypt</button>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <form id="polyRotate2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" id="pmd" value=""><br>
+                        <label for="lname">Key:</label><br>
+                        <input type="text" id="ped" value="" pattern="^[a-zA-Z]+$"><br><br>
+                        <div id="result4"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <button type="button" onclick="postPoly2()">Decrypt</button>
+                        <p></p>
+                        <p></p>
+                        <div id="result4"></div>
+                        <button type="reset" onclick="clearBox('result3', 'result4')">Clear Data</button>
+                        <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+                     </form>
+               </div>
+               <div id="XORShift">
+                  <form id="XOR1">
+                     <p style="font-size: 20px"> <strong>XOR Encryption</strong><br>
+                     <p> To start, pass any message and any key for encryption<br>
+                        Using the XOR algorithm to encrypt data outputs messages<br>
+                        that are much more garbled and difficult to predict.<br>
+                        XOR also uses binary, but the algorithm does not add like<br>
+                        in the rotation cipher. It compares each corresponding bit,<br>
+                        and outputs 0 if they are the same, 1 if they are different.<br>
+                     </p>
+                     <label for="fname">Message:</label><br>
+                     <input type="text" id="xm" value=""><br>
+                     <label for="lname">Key:</label><br>
+                     <input type="text" id="xk" value=""><br><br>
+                     <div id="result5"></div>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <button type="button" onclick="postXor1()">Encrypt</button>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <form id="XOR2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" id="xmd" value=""><br>
+                        <label for="lname">Key:</label><br>
+                        <input type="text" i id="xkd" value=""><br><br>
+                        <div id="result6"></div>
+                        <p></p>
+                        <button type="button" onclick="postXor2()">Decrypt</button>
+                        <p></p>
+                        <button type="reset" onclick="clearBox('result5', 'result6')">Clear Data</button>
+                        <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+                     </form>
+               </div>
+               <div id="custom1">
+                  <form id="c1">
+                     <p style="font-size: 20px"> <strong>Custom Encryption</strong><br>
+                     <p> To start, pass alphanumeric or integer key for encryption<br>
+                        The algorithm autmatically converts input to uppercase<br>
+                        The key is already preloaded and the user doesn't need<br>
+                        a unique key. This algorithm will not encrypt special<br>
+                        characters and they will ignored by the algorithm<br>
+                        This is a simple algorithm that the user can use if<br>
+                        they do not want to create their own key or let an<br>
+                        individual see what they want to encrypt.<br>
+                     </p>
+                     <label for="fname">Message:</label><br>
+                     <input type="text" oninput="this.value = this.value.toUpperCase()" id="CE" value=""><br>
+                     <br>
+                     <div id="result7"></div>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <button type="button" onclick="custom1()">Encrypt</button>
+                     <p></p>
+                     <p></p>
+                     <p></p>
+                     <form id="c2">
+                        <label for="fname">Message:</label><br>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" id="CD" value=""><br>
+                        <br>
+                        <div id="result8"></div>
+                        <p></p>
+                        <button type="button" onclick="custom2()">Decrypt</button>
+                        <p></p>
+                        <button type="reset" onclick="clearBox('result7', 'result8')">Clear Data</button>
+                        <button id="info" title="Clear button resets all data" type="button" disabled>info</button>
+                     </form>
+               </div>
+               <div id="support">
+                  <form>
                      <br>
                      <br>
-                     <option value="australia">Australia</option>
-                     <option value="canada">Canada</option>
-                     <option value="usa">USA</option>
-                  </select>
-                  <br>
-                  <br>
-                  <label for="subject">Subject</label>
-                  <br>
-                  <br>
-                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                  <br>
-                  <br>
-                  <input type="submit" value="Submit" onclick="alert('Message has been sent to our support unit! We will be in touch shortly.')">
-               </form>
+                     <label for="fname">First Name</label>
+                     <br>
+                     <br>
+                     <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                     <br>
+                     <br>
+                     <label for="lname">Last Name</label>
+                     <br>
+                     <br>
+                     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                     <br>
+                     <br>
+                     <label for="country">Country</label>
+                     <br>
+                     <br>
+                     <select id="country" name="country">
+                        <br>
+                        <br>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                     </select>
+                     <br>
+                     <br>
+                     <label for="subject">Subject</label>
+                     <br>
+                     <br>
+                     <textarea id="subject" name="subject" placeholder="Write something.."
+                        style="height:200px"></textarea>
+                     <br>
+                     <br>
+                     <input type="submit" value="Submit"
+                        onclick="alert('Message has been sent to our support unit! We will be in touch shortly.')">
+                  </form>
+               </div>
+               <div id="tc">
+                  <form>
+                     <p style="font-size: 20px"> <strong>Terms And Conditions</strong><br>
+                     <p> These terms and conditions outline the rules and regulations for the use of Try Encryption!'s
+                        Website, located at www.fakewebsitename19420.com.
+                        By accessing this website we assume you accept these terms and conditions. Do not continue to
+                        use fakewebsitename19420 if you do not agree to take all of the terms and conditions stated on
+                        this page.
+                        The following terminology applies to these Terms and Conditions, Privacy Statement and
+                        Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log
+                        on this website and
+                        compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and
+                        "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and
+                        ourselves. All terms
+                        refer to the offer, acceptance and consideration of payment necessary to undertake the process
+                        of our assistance to the Client in the most appropriate manner for the express purpose of
+                        meeting the Client’s
+                        needs in respect of provision of the Company’s stated services, in accordance with and subject
+                        to, prevailing law of Netherlands. Any use of the above terminology or other words in the
+                        singular, plural,
+                        capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to
+                        same. Cookies
+                        We employ the use of cookies. By accessing fakewebsitename19420, you agreed to use cookies in
+                        agreement with the Try Encryption!'s Privacy Policy.
+
+                        Most interactive websites use cookies to let us retrieve the user’s details for each visit.
+                        Cookies are used by our website to enable the functionality of certain areas to make it easier
+                        for people visiting our website. Some of our affiliate/advertising partners may also use
+                        cookies.
+
+                        License
+                        Unless otherwise stated, Try Encryption! and/or its licensors own the intellectual property
+                        rights for all material on fakewebsitename19420. All intellectual property rights are reserved.
+                        You may access this from fakewebsitename19420 for your own personal use subjected to
+                        restrictions set in these terms and conditions.
+
+                        You must not:
+
+                        Republish material from fakewebsitename19420
+                        Sell, rent or sub-license material from fakewebsitename19420
+                        Reproduce, duplicate or copy material from fakewebsitename19420
+                        Redistribute content from fakewebsitename19420
+                        This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the
+                        help of the Terms And Conditions Generator.
+
+                        Parts of this website offer an opportunity for users to post and exchange opinions and
+                        information in certain areas of the website. Try Encryption! does not filter, edit, publish or
+                        review Comments prior to their presence on the website. Comments do not reflect the views and
+                        opinions of Try Encryption!,its agents and/or affiliates. Comments reflect the views and
+                        opinions of the person who post their views and opinions. To the extent permitted by applicable
+                        laws, Try Encryption! shall not be liable for the Comments or for any liability, damages or
+                        expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of
+                        the Comments on this website.
+
+                        Try Encryption! reserves the right to monitor all Comments and to remove any Comments which can
+                        be considered inappropriate, offensive or causes breach of these Terms and Conditions.
+
+                        You warrant and represent that:
+
+                        You are entitled to post the Comments on our website and have all necessary licenses and
+                        consents to do so;
+                        The Comments do not invade any intellectual property right, including without limitation
+                        copyright, patent or trademark of any third party;
+                        The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful
+                        material which is an invasion of privacy
+                        The Comments will not be used to solicit or promote business or custom or present commercial
+                        activities or unlawful activity.
+                        You hereby grant Try Encryption! a non-exclusive license to use, reproduce, edit and authorize
+                        others to use, reproduce and edit any of your Comments in any and all forms, formats or media.
+                  </form>
+               </div>
             </div>
-            <div id="tc">
-               <form>
-                  <p style="font-size: 20px" > <strong>Terms And Conditions</strong><br>
-                  <p> These terms and conditions outline the rules and regulations for the use of Try Encryption!'s Website, located at www.fakewebsitename19420.com.
-                     By accessing this website we assume you accept these terms and conditions. Do not continue to use fakewebsitename19420 if you do not agree to take all of the terms and conditions stated on this page.
-                     The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and 
-                     compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms 
-                     refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s 
-                     needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, 
-                     capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same. Cookies
-                     We employ the use of cookies. By accessing fakewebsitename19420, you agreed to use cookies in agreement with the Try Encryption!'s Privacy Policy.
-                     
-                     Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
-                     
-                     License
-                     Unless otherwise stated, Try Encryption! and/or its licensors own the intellectual property rights for all material on fakewebsitename19420. All intellectual property rights are reserved. You may access this from fakewebsitename19420 for your own personal use subjected to restrictions set in these terms and conditions.
-                     
-                     You must not:
-                     
-                     Republish material from fakewebsitename19420
-                     Sell, rent or sub-license material from fakewebsitename19420
-                     Reproduce, duplicate or copy material from fakewebsitename19420
-                     Redistribute content from fakewebsitename19420
-                     This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the Terms And Conditions Generator.
-                     
-                     Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Try Encryption! does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of Try Encryption!,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Try Encryption! shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.
-                     
-                     Try Encryption! reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or causes breach of these Terms and Conditions.
-                     
-                     You warrant and represent that:
-                     
-                     You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;
-                     The Comments do not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party;
-                     The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy
-                     The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.
-                     You hereby grant Try Encryption! a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.
-               </form>
-            </div>
-         </div>
-      </section>
-      <script src="/js/mainScript.js"></script>
-   </body>
+   </section>
+   <script src="/js/mainScript.js"></script>
+</body>
+
 </html>

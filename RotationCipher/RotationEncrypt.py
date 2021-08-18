@@ -49,6 +49,7 @@ def encryptBasicRotate(message, key):
     encrypted = ''
     
     # Makes sure the key is within a valid range.
+    print(key)
     
     if key < 0 or key > 26:
         
