@@ -1,21 +1,37 @@
+// Following statement is used to toggle display of each function
+
 showContent("homePage");
+
+// Following function allows for dispay of each item in the menu
 
 function showContent(clickLinkId) {
 
+    // Get the current active menu id and clear it
+
     if (document.getElementById("activeMenu").value != undefined) {
 
+        // Set the current menu value to null
+
         currentMenu = document.getElementById("activeMenu").value;
+
+        // Display the current menu to the user
 
         document.getElementById(currentMenu).style.display = "none";
     }
 
+    // When a different link has been clicked, block the current menu item
+
     document.getElementById(clickLinkId).style.display = "block";
-    
     document.getElementById("activeMenu").value = clickLinkId;
 }
 
+// This function is is written to clear all menu boxes
+
 function clearBox(e1, e2)
 {
+
+    // Sets all the values in the boxes to null/nothing
+
     document.getElementById(e1).innerHTML = "";
     document.getElementById(e2).innerHTML = "";
 }
@@ -46,15 +62,6 @@ function postBasicRotate() {
     // Request is sent to the server
     // convert javascript object to string before sending it to the API
     request.send(JSON.stringify(data));
-}
-
-function limitSpace(event)
-{
-   if(event.which ==32)
-   {
-      event.preventDefault();
-      return false;
-   }
 }
 
 function postBasicRotate2() {
