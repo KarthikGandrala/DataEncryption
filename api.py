@@ -1,3 +1,4 @@
+
 # Importing all required standard modules and functions from custom modules
 
 import sys
@@ -65,7 +66,7 @@ def encryptData():
     
     # Data is appended to result and is finally returned
     
-    result = "Encrypted message with key is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function defined to gather input and apply algorithms
@@ -99,7 +100,7 @@ def decryptData():
     
     # Data is appended to result and is finally returned
 
-    result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function defined to gather input and apply algorithms
@@ -195,7 +196,7 @@ def xorData1():
     
     # Data is added to result and returned for display 
     
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function is defined for encryption/decryption
@@ -225,7 +226,7 @@ def xorData2():
     
     # Data is finally appended to result and returned for display
     
-    result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function is defined for encryption/decryption
@@ -260,7 +261,7 @@ def cus1():
     
     # Encrypted/decrypted data ia added to result and returned
     
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/cD', methods=['POST'])
@@ -294,7 +295,7 @@ def cus2():
     
     # Final result is appended to result and returned to user
     
-    result = "The decrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 app.run()
 

@@ -60,6 +60,11 @@ def polyPrint(message, key):
     encrypted = ''
     counter = 0
     spec = "~!@#$%^&*()_+}}][|::;><?/"
+    for char in message:
+        if str(char).isdigit() == True or spec.count(char) > 0:
+            encrypted = "ERROR. Please input message with no integers or special characters"
+            return encrypted
+    
     for char in key:
         if str(char).isdigit() == True or spec.count(char) > 0:
             encrypted = "ERROR. Please input key with no integers or special characters"

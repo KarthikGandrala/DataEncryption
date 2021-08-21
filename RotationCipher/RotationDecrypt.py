@@ -56,6 +56,16 @@ def reverseBasicRotate(letter, key):
 
 def encrypt(message, key):
     
+    spec = "~!@#$%^&*()_+}}][|::;><?/"
+    
+    for char in message:
+        
+        if str(char).isdigit() == True or spec.count(char) > 0:
+            
+            encrypted = "ERROR. Please input message with no integers or special characters"
+            
+            return encrypted
+    
     # Empty list defined to store the encrypted values
 
     encrypted = ''
