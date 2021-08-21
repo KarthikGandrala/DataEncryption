@@ -69,6 +69,7 @@ def encrypt(message, key):
     # Empty list defined to store the encrypted values
 
     encrypted = ''
+    
     for character in message:
         
         # For loop is run to the length of the message.
