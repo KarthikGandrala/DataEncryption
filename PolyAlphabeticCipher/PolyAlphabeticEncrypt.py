@@ -57,17 +57,26 @@ counter = 0
 # Runs until i is not in the range of len(plaintext)
 
 def polyPrint(message, key):
+    
     encrypted = ''
+    
     counter = 0
+    
     spec = "~!@#$%^&*()_+}}][|::;><?/"
+
+    for char in message:
+        if str(char).isdigit() == True or spec.count(char) > 0:
+            encrypted = "ERROR. Please input message with no integers or special characters"
+            return encrypted
+    
     for char in key:
-        print(char)
         if str(char).isdigit() == True or spec.count(char) > 0:
             encrypted = "ERROR. Please input key with no integers or special characters"
             return encrypted
     # For loop written to split the message
     
     for i in range(len(message)):
+    
         letter = message[i]
 
         # Checks if letter is lowercase
@@ -86,6 +95,7 @@ def polyPrint(message, key):
             encrypted = encrypted + letter
             
     # In this end, encrypted is returned with all the encrypted letters
+    
     
     return encrypted
 

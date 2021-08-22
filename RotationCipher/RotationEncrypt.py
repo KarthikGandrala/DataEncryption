@@ -48,6 +48,16 @@ def encryptBasicRotate(message, key):
     
     encrypted = ''
     
+    spec = "~!@#$%^&*()_+}}][|::;><?/"
+    
+    for char in message:
+        
+        if str(char).isdigit() == True or spec.count(char) > 0:
+            
+            encrypted = "ERROR. Please input message with no integers or special characters"
+            
+            return encrypted
+    
     # Makes sure the key is within a valid range.
     
     if key < 0 or key > 26:

@@ -1,6 +1,6 @@
+
 # Importing all required standard modules and functions from custom modules
 
-import re
 import sys
 import json
 import RotationCipher
@@ -66,7 +66,7 @@ def encryptData():
     
     # Data is appended to result and is finally returned
     
-    result = "Encrypted message with key is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function defined to gather input and apply algorithms
@@ -100,7 +100,7 @@ def decryptData():
     
     # Data is appended to result and is finally returned
 
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function defined to gather input and apply algorithms
@@ -118,7 +118,7 @@ def polyData():
     print(record)
     
     # get_json() gives the data in the dict format
-    m = str(record['data'])
+    m = str(record['data']).lower()
     k = str(record['key'])
     
     # Encryption/DEcryption function is applied to the data
@@ -196,7 +196,7 @@ def xorData1():
     
     # Data is added to result and returned for display 
     
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function is defined for encryption/decryption
@@ -226,7 +226,7 @@ def xorData2():
     
     # Data is finally appended to result and returned for display
     
-    result = "The Decrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 # Function is defined for encryption/decryption
@@ -261,7 +261,7 @@ def cus1():
     
     # Encrypted/decrypted data ia added to result and returned
     
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 
 @app.route('/cD', methods=['POST'])
@@ -295,7 +295,7 @@ def cus2():
     
     # Final result is appended to result and returned to user
     
-    result = "The Encrypted message is " + str(json.dumps(recordInDict["data"]))
+    result = str(json.dumps(recordInDict["data"]))
     return result
 app.run()
 

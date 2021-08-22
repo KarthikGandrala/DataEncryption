@@ -59,12 +59,6 @@ def decrypt(message, key):
     
     decrypted = ''
     counter = 0
-    spec = "~!@#$%^&*()_+}}][|::;><?/"
-    for char in key:
-        print(char)
-        if str(char).isdigit() == True or spec.count(char) > 0:
-            encrypted = "ERROR. Please input key with no integers or special characters"
-            return encrypted
 
     # Loop runs for the length of the users input message
 
