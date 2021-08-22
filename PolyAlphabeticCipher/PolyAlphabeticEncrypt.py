@@ -62,17 +62,37 @@ def polyPrint(message, key):
     
     counter = 0
     
+    # Spec defined to corss verify that no special character are within the string
+    
     spec = "~!@#$%^&*()_+}}][|::;><?/"
+    
+    # Loop runs for all letters in message
 
     for char in message:
+        
+        
+        # Checks if character is integer or special char
+        
         if str(char).isdigit() == True or spec.count(char) > 0:
+            
+            # If found to be true, error message is returned
+            
             encrypted = "ERROR. Please input message with no integers or special characters"
+            
             return encrypted
     
     for char in key:
+        
+        # Checks if any characeter in key is a digit or a special character
+        
         if str(char).isdigit() == True or spec.count(char) > 0:
+        
+            # If found to be true, error message is returned
+            
             encrypted = "ERROR. Please input key with no integers or special characters"
+            
             return encrypted
+        
     # For loop written to split the message
     
     for i in range(len(message)):

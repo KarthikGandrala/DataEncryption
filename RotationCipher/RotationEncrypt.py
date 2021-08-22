@@ -48,9 +48,15 @@ def encryptBasicRotate(message, key):
     
     encrypted = ''
     
+    # spec defined to cross verify all letters are not special character
+    
     spec = "~!@#$%^&*()_+}}][|::;><?/"
     
+    # Loop runs for length of message
+    
     for char in message:
+        
+        # Checks if char is integer or special character
         
         if str(char).isdigit() == True or spec.count(char) > 0:
             

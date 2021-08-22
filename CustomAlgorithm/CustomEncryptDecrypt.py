@@ -149,18 +149,28 @@ def cipher_decryption(message, key):
 
             ch_temp = ord(message[i]) - rot_13_key
             
+            # Making sure that message[i] is valid
+                        
             if ord(message[i]) == 32:
+                
+                # Defining empty string for concatenation
                 
                 decryp_text += ' '
                 
             elif ch_temp < 65:
                 
+                # Checks if char is lowercase or uppercase
+                
                 ch_temp += 26
+                
+                # Appending to decrypt text
                 
                 decryp_text += chr(ch_temp)
                 
             else:
                 
                 decryp_text += chr(ch_temp)
+                
+                # final string returned
 
     return decryp_text

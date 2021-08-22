@@ -56,9 +56,15 @@ def reverseBasicRotate(letter, key):
 
 def encrypt(message, key):
     
+    # Special char string defined to cross verify user input
+    
     spec = "~!@#$%^&*()_+}}][|::;><?/"
     
+    # Loop run for every character in message
+    
     for char in message:
+        
+        # Checks is char is an integer or if it is special character
         
         if str(char).isdigit() == True or spec.count(char) > 0:
             
