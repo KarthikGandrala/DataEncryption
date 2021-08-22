@@ -36,6 +36,11 @@ function clearBox(e1, e2)
     document.getElementById(e2).innerHTML = "";
 }
 
+function stopSpace(event) {
+    var k = event ? event.which : window.event.keyCode;
+    if (k == 32) return false;
+}
+
 function postBasicRotate() {
     // creating the XMLHttpRequest object
     var request = new XMLHttpRequest();

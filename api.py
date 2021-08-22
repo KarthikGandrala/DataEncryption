@@ -118,7 +118,7 @@ def polyData():
     print(record)
     
     # get_json() gives the data in the dict format
-    m = str(record['data'])
+    m = str(record['data']).lower()
     k = str(record['key'])
     
     # Encryption/DEcryption function is applied to the data

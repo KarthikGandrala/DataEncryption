@@ -104,12 +104,13 @@
                         of transferring data. This method uses vigenere squares<br>
                         For one, information with same letters won't be the<br>
                         same if encrypted. For example, if 'hello world' is passed<br>
-                        with encryption string 'qwerty', it creates 'xapch uenpu'.
+                        with encryption string 'qwerty', it creates 'xapch uenpu'.<br>
+                        Data will also always return in lowercase
                      </p>
                      <label for="fname">Message:</label><br>
                      <input type="text" id="pm" value=""><br>
                      <label for="lname">Key:</label><br>
-                     <input type="text" id="pe" value="" onkeypress="limitSpace(event)"><br><br>
+                     <input type="text" id="pe" value="" onkeypress="return stopSpace(event)"><br><br>
                      <div id="result3"></div>
                      <p></p>
                      <p></p>
